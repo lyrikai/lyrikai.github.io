@@ -52,7 +52,7 @@ document.getElementById("submit").addEventListener('click', ()=>{
 
             let btn = document.createElement("div");
             btn.setAttribute("class", "readmore");
-            btn.innerHTML = "read more";
+            btn.innerHTML = "Read more";
             div3.appendChild(btn);
 
             let button = document.getElementsByClassName("readmore")
@@ -68,15 +68,31 @@ document.getElementById("submit").addEventListener('click', ()=>{
             let readdate = document.getElementById("readdate")
             let readplot = document.getElementById("readplot")
             let readimg = document.getElementById("readimg")
+
             function myFunction() {
+                let test = this.parentNode
+                let test2 = test.parentNode
+                let test3 = test2.getElementsByTagName('div')[0]
+                let test4
+
+                if(test3.getElementsByTagName('img')[0]){
+                   test4 = test3.getElementsByTagName('img')[0].src
+                }
+                
+                let p = test.getElementsByTagName('p')[0].textContent
+                let p2 = test.getElementsByTagName('p')[1].textContent
                 document.body.style.overflow = "hidden";
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
-                centerBlock.style.display = "block"
-                readtitle.innerHTML = film.Search[i].Title
-                readdate.innerHTML = film.Search[i].Year
-                readimg.src = film.Search[i].Poster
+                centerBlock.style.display = "flex"
+                readtitle.innerHTML = p
+                readdate.innerHTML = p2
+                if(test4){
+                    readimg.src = test4
+                }
+              
                 readplot.innerHTML = plott
+                test4 = 0
             }
 
             ok = true
@@ -112,4 +128,3 @@ document.getElementById("submit").addEventListener('click', ()=>{
 
 }) 
 
-/*-------------*/
