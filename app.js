@@ -83,7 +83,7 @@ document.getElementById("submit").addEventListener('click', ()=>{
             button[i-1].addEventListener('click', myFunction)
 
             let plott
-            fetch(`http://www.omdbapi.com/?t=` + film.Search[i].Title +'&apikey=f6d4f5b')
+            fetch(`https://www.omdbapi.com/?t=` + film.Search[i].Title +'&apikey=f6d4f5b')
                 .then((response) => {
                     return response.json();
                 })
