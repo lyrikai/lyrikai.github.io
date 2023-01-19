@@ -4,7 +4,7 @@ let i = 0
 
 document.getElementById("submit").addEventListener('click', ()=>{
 
-    fetch('http://www.omdbapi.com/?s=' + filmName.value +'&apikey=f6d4f5b')
+    fetch('https://www.omdbapi.com/?s=' + filmName.value +'&apikey=f6d4f5b')
 
     .then((response) => {
         return response.json();
